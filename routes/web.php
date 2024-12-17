@@ -49,6 +49,9 @@ Route::get('/user/{id}', function (string $id){
 });
 
 Route::get('/products', [ProductController::class, 'index']);
+
+Route::get('/products/{id}', [ProductController::class, 'show']);
+
     //Resourceful Routes
 
 #TODO: เรียกใช้ ChirpController เพื่อจัดการทรัพยากรต่างๆใน chirps route โดยไม่เรียกมาทั้งหมดใช้แค่ระบุเฉพาะ (->only([]))
