@@ -38,6 +38,9 @@ Route::resource('chirps', ChirpController::class)
     ->only(['index', 'store', 'update', 'destroy'])
     ->middleware(['auth', 'verified']);
 
+#TODO: เรียกใช้ ChirpController เพื่อจัดการทรัพยากรต่างๆใน chirps route โดยไม่เรียกมาทั้งหมดใช้แค่ระบุเฉพาะ (->only([]))
+#TODO: Route::resource ช่วยสร้าง Route หลายตัวสำหรับการจัดการทรัพยากร (Resource) เช่น การสร้าง แสดง แก้ไข และลบ
+
 // Route::resource('csmju', CsmjuController::class)
 //     ->only(['index'])
 //     ->middleware(['auth', 'verified']);
@@ -58,6 +61,5 @@ Route::get('/products/{id}', [ProductController::class, 'show'])
 
     //Resourceful Routes
 
-#TODO: เรียกใช้ ChirpController เพื่อจัดการทรัพยากรต่างๆใน chirps route โดยไม่เรียกมาทั้งหมดใช้แค่ระบุเฉพาะ (->only([]))
-#TODO: Route::resource ช่วยสร้าง Route หลายตัวสำหรับการจัดการทรัพยากร (Resource) เช่น การสร้าง แสดง แก้ไข และลบ
+
 require __DIR__ . '/auth.php';
