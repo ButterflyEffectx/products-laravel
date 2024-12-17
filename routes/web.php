@@ -48,9 +48,11 @@ Route::get('/user/{id}', function (string $id){
     return 'User'.$id;
 });
 
-Route::get('/products', [ProductController::class, 'index']);
+Route::get('/products', [ProductController::class, 'index'])
+    ->middleware(['auth', 'verified']);
 
-Route::get('/products/{id}', [ProductController::class, 'show']);
+Route::get('/products/{id}', [ProductController::class, 'show'])
+    ->middleware(['auth', 'verified']);
 
     //Resourceful Routes
 
