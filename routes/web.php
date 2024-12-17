@@ -48,7 +48,9 @@ Route::get('/user/{id}', function (string $id){
     return 'User'.$id;
 });
 
+
 Route::get('/products', [ProductController::class, 'index'])
+    ->name('products.index')
     ->middleware(['auth', 'verified']);
 
 Route::get('/products/{id}', [ProductController::class, 'show'])
